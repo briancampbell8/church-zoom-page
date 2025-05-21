@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Welcome to Next.js
 
 This is the most minimal starter for your Next.js project.
@@ -23,3 +24,7 @@ pnpm create next-app --example hello-world hello-world-app
 ```
 
 Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+=======
+# church-zoom-page
+CCC Community Group Comms Page
+>>>>>>> d7a80114b8124a3a96f24a6df3486aa06f84f682

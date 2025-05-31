@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customizable Marquee</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100%;
+            padding: 10px;
+            border: 2px solid black;
+            background-color: lightgray;
+        }
+
+        .marquee {
+            display: inline-block;
+            animation: marquee 5s linear infinite;
+            font-size: 20px;
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(100%);
+            }
+
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+            border-radius: 5px;
+        }
+
+            .modal input {
+                margin: 5px;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="marquee-container" id="marqueeContainer">
+        <div class="marquee" id="marqueeText">Welcome to the scrolling marquee! 🚀</div>
+    </div>
+
+    <button onclick="openSettings()">Customize</button>
+
+    <div id="settingsModal" class="modal">
+        <h3>Customize Marquee</h3>
+        <label>Speed (seconds): <input type="number" id="speedInput" value="5"></label><br>
+        <label>Font Size (px): <input type="number" id="fontSizeInput" value="20"></label><br>
+        <label>Background Color: <input type="color" id="bgColorInput"></label><br>
+        <label>
+            Border Style:
+            <select id="borderStyleInput">
+                <option value="solid">Solid</option>
+                <option value="dashed">Dashed</option>
+                <option value="dotted">Dotted</option>
+            </select>
+        </label><br>
+        <button onclick="applyChanges()">Apply</button>
+        <button onclick="closeSettings()">Close</button>
+    </div>
+
+    <script>
+        function openSettings() {
+            document.getElementById("settingsModal").style.display = "block";
+        }
+
+        function closeSettings() {
+            document.getElementById("settingsModal").style.display = "none";
+        }
+
+        function applyChanges() {
+            let speed = document.getElementById("speedInput").value;
+            let fontSize = document.getElementById("fontSizeInput").value;
+            let bgColor = document.getElementById("bgColorInput").value;
+            let borderStyle = document.getElementById("borderStyleInput").value;
+
+            document.getElementById("marqueeText").style.animationDuration = speed + "s";
+            document.getElementById("marqueeText").style.fontSize = fontSize + "px";
+            document.getElementById("
